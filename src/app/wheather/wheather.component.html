@@ -1,0 +1,66 @@
+
+<div class="body">
+    <div class="top-container">
+      <div class="top-container-item">
+       {{weatherDetails.location.name}} ,{{weatherDetails.location.region}}
+      </div>
+      <div class="top-container-fav-item">
+            <button  (click)="onFavPressed()" [ngClass]="{'fav-icon':favState,'fav-icon2':!favState}"></button>
+            <div id="fav-text" *ngIf="favState">Added to favourite</div>
+            <div id="fav-text" *ngIf="!favState">Add to favourite</div>
+          </div>
+    </div>
+    <div class="main-container">
+    
+         <img id="sun-image" src={{weatherDetails.current.condition.icon}} alt="">
+         <div id="temperature-container">
+          <div *ngIf="selectedTemperatureNotation=='c'" id="temperature-label">{{weatherDetails.current.temp_c}}</div>
+          <div *ngIf="selectedTemperatureNotation=='f'" id="temperature-label">{{weatherDetails.current.temp_f}}</div>
+          <div id="temperature-button">
+            <button [ngClass]="{'button-active':selectedTemperatureNotation=='c'}" (click)="changeTempNotation('c')" class="temperature-button-item temperature-button-item-extra"><sup>0</sup>C</button>
+            <button [ngClass]="{'button-active':selectedTemperatureNotation=='f'}" (click)="changeTempNotation('f')" class="temperature-button-item"><sup>0</sup>F</button>
+          </div>
+         </div>
+         <div id="weather-label">{{weatherDetails.current.condition.text}}</div>
+    </div>
+  </div>
+    <hr class="divider">
+    <div class="bottom-sheet">
+      <div class="bottom-bar">
+        <div class="bottom-bar-item">
+          <img src="assets/images/icon_temperature_info.png" alt="temper" height="32px" width="16px">
+          <div class="bottom-bar-sub-item">
+            <div id="row-item1">Min - Max</div>
+            <div id="row-item2">{{weatherDetails.current.temp_c -  10}}<sup>0</sup> - {{weatherDetails.current.temp_c +  10}}<sup>0</sup></div>
+          </div>
+        </div>
+        <div class="bottom-bar-item">
+          <img src="assets/images/icon_precipitation_info.png" alt="temper" height="30px" width="29px">
+          <div class="bottom-bar-sub-item">
+            <div id="row-item1">Precipitation</div>
+            <div id="row-item2">{{weatherDetails.current.precip_in}}%</div>
+          </div>
+        </div>
+        <div class="bottom-bar-item">
+          <img src="assets/images/icon_humidity_info.png" alt="temper" height="25px" width="19px">
+          <div class="bottom-bar-sub-item">
+            <div id="row-item1">Humidity</div>
+            <div id="row-item2">{{weatherDetails.current.humidity}}%</div>
+          </div>
+        </div>
+        <div class="bottom-bar-item">
+          <img src="assets/images/icon_wind_info.png" alt="temper" height="22px" width="32px">
+          <div class="bottom-bar-sub-item">
+            <div id="row-item1">Wind</div>
+            <div id="row-item2">{{weatherDetails.current.wind_mph}} mph</div>
+          </div>
+        </div>
+        <div class="bottom-bar-item">
+          <img src="assets/images/icon_visibility_info.png" alt="temper" height="20px" width="34px">
+          <div class="bottom-bar-sub-item">
+            <div id="row-item1">Visibility</div>
+            <div id="row-item2">{{weatherDetails.current.vis_miles}} mph</div>
+          </div>
+        </div>
+      </div>
+    </div>

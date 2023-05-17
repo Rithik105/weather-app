@@ -1,0 +1,183 @@
+.body{
+    display: flex;
+    flex-direction: column;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    height:100%;
+    width:100%
+}
+.top-container{
+    text-align:left;
+    padding-left: 10px;
+    display: flex;
+    flex-direction: column;
+    margin-top: 37px;
+    height: 61px;
+    width: 100%;
+    align-items: start;
+    justify-content: space-between;
+}
+.top-container-item{
+    height: 24px;
+    color: #FFFFFF;
+    font-family: Roboto;
+    font-size: 20px;
+    font-weight: 500;
+    letter-spacing: 0;
+    line-height: 24px;
+    text-align: left;
+}
+.top-container-fav-item{
+    display: flex;
+    flex-direction: row;
+ 
+}
+.fav-icon{
+    height: 16.97px;
+    width: 18px;
+    background-color: transparent;
+    border: 0px solid black;
+background-image: url("../assets/icon_favourite_Active.png") ;
+background-position: center;
+background-repeat: no-repeat;
+background-size: contain;  
+}
+.fav-icon2{
+    height: 16.97px;
+    width: 18px;
+    border: 0px solid black;
+background-image: url("../assets/png-transparent-heart-symbol-computer-icons-heart-love-text-heart-thumbnail.png") ;
+background-position: center;
+background-repeat: no-repeat;
+background-size: contain;  
+}
+#fav-text{
+    margin-left: 10px;
+    height: 15px;
+  width: 108px;
+  color: #FAD05B;
+  font-family: Roboto;
+  font-size: 13px;
+  font-weight: 500;
+  letter-spacing: 0;
+  line-height: 15px;
+}
+.main-container{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    margin-top: 26px;
+    height: 250px;
+    width: 100%;
+    align-items: center;
+}
+#sun-image{
+    align-items: center;
+    height: 84px;
+    width: 80px;
+    object-fit: fill;
+}
+#temperature-container{
+    height: 75px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: baseline;
+}
+#temperature-label{
+  color: #FFFFFF;
+  font-family: Roboto;
+  font-size: 64px;
+  font-weight: 500;
+  letter-spacing: 0;
+}
+#temperature-button{
+    margin-left: 10px;
+    height: 30px;
+    width: 55px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+
+.temperature-button-item{
+    border-top-right-radius: 2px;
+    border-bottom-right-radius: 2px;
+    flex: 1;
+    height: 100%;
+    border: 1px solid white;
+    background-color: transparent;
+    color: white;
+   color: #FFFFFF;
+   font-family: Roboto;
+   font-size: 16px;
+   letter-spacing: 0;
+   line-height: 19px
+}
+
+.temperature-button-item-extra{
+    border-top-left-radius: 2px;
+    border-bottom-left-radius: 2px;
+    border-top-right-radius: 0px;
+    border-bottom-right-radius: 0px;
+}
+#weather-label{
+    height: 25px;
+    color: #FFFFFF;
+    font-family: Roboto;
+    font-size: 22px;
+    letter-spacing: 0;
+    line-height: 25px;
+    text-align: center;
+}
+.button-active{
+    background-color: white;
+    color: red;
+}
+.bottom-sheet{
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 48px;
+    width: 100%;
+}
+.bottom-bar{
+  display: flex;
+  flex-direction: row;
+  padding-top: 20px;
+  margin-left: 80px;
+  margin-right: 80px;
+  margin-top: 10px;
+  justify-content: space-between;
+}
+.bottom-bar-item{
+   
+    align-items:center;
+    width: 18%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+.bottom-bar-sub-item{
+    margin-left: 10px;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+ 
+}
+#row-item1{
+    color: #FFFFFF;
+    font-family: Roboto;
+    font-size: 15px;
+    letter-spacing: 0;
+    line-height: 18px;
+}
+#row-item2{
+    color: #FFFFFF;
+    font-family: Roboto;
+    font-size: 22px;
+    font-weight: 500;
+    letter-spacing: 0;
+    line-height: 25px;
+}
+

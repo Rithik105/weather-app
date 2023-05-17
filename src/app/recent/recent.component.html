@@ -1,0 +1,26 @@
+<div class="container">
+    <div *ngIf="recentList.length==0" class="inner-empty">
+    <div  class="nothing"></div>
+        <div class="no-favourites-added">No Favourites added</div>
+    
+    </div>
+    <div *ngIf="recentList.length>0" class="inner">
+        <div id="title">{{recentList.length}} City added as favourite</div>
+        <div class="fav-list-container" *ngFor="let i of recentList">
+            <div class="fav-container-text">{{i.location.name}},{{i.location.region}}</div>
+            <div class="fav-container-center-item">
+                <img src={{i.current.condition.icon}} height="38px" width="36px" alt="" >
+                <div class="fav-container-center-item2">
+                    <div class="element">{{i.current.temp_c}}</div> 
+                    <div class="element2"><sup>0</sup></div>
+                    <div class="element3">c</div> 
+                </div>
+                <div class="fav-container-center-item3">{{i.current.condition.text}}</div>
+                
+            </div>
+            <button class="fav-button" ></button>
+        </div>
+    
+    </div>
+    </div>
+    
