@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { DataService } from '../data.service';
+import { WeatherModel } from './weather.model';
 
 @Component({
   selector: 'app-wheather',
@@ -7,7 +8,7 @@ import { DataService } from '../data.service';
   styleUrls: ['./wheather.component.css']
 })
 export class WheatherComponent implements OnInit{
-  weatherDetails : any 
+  weatherDetails : WeatherModel = {location:{name:"",region:"",localtime:""},current:{temp_c:0,temp_f:0,condition:{text:"",icon:""},wind_mph:0,humidity:0,vis_miles:0,precip_in:0}}
   favState = false;
  selectedTemperatureNotation=''
 
@@ -18,12 +19,13 @@ this.selectedTemperatureNotation=temp;
 }
 
 ngOnInit(): void {
+  console.log("init");
+  
   this.selectedTemperatureNotation='c' 
   this.dataService.weatherDataChanged.subscribe((value)=>{
     this.weatherDetails=value
     this.checkFav()
   })
-  this.weatherDetails = this.dataService.getStoredData()
   this.checkFav()
 }
 

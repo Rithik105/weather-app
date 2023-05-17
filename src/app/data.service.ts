@@ -1,6 +1,6 @@
 import { EventEmitter, Injectable } from "@angular/core";
 import { HttpService } from "./http.service";
-import { WeatherModel } from "./wheather/weather.model";
+import { WeatherModel } from "./weather/weather.model";
 
 @Injectable({
     providedIn:"root"

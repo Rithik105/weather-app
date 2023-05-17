@@ -2,7 +2,7 @@ import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 
 import { AppComponent } from './app.component';
-import { WheatherComponent } from './wheather/wheather.component';
+import { WheatherComponent } from './weather/wheather.component';
 import { FavouriteComponent } from './favourite/favourite.component';
 import { RecentComponent } from './recent/recent.component';
 import { DataService } from './data.service';
