@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { DataService } from '../data.service';
-import { WeatherModel } from './weather.model';
+import { WeatherModel } from '../weather.model';
 
 @Component({
   selector: 'app-wheather',
@@ -8,7 +8,7 @@ import { WeatherModel } from './weather.model';
   styleUrls: ['./wheather.component.css']
 })
 export class WheatherComponent implements OnInit{
-  weatherDetails : WeatherModel = {location:{name:"",region:"",localtime:""},current:{temp_c:0,temp_f:0,condition:{text:"",icon:""},wind_mph:0,humidity:0,vis_miles:0,precip_in:0}}
+  weatherDetails : WeatherModel = {isFav:false,location:{name:"",region:"",localtime:""},current:{temp_c:0,temp_f:0,condition:{text:"",icon:""},wind_mph:0,humidity:0,vis_miles:0,precip_in:0}}
   favState = false;
  selectedTemperatureNotation=''
 

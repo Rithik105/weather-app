@@ -1,8 +1,7 @@
 export interface WeatherModel{
    location:LocationModel
    current:CurrentModel
-
-
+   isFav:Boolean
 }
 export interface LocationModel{
 name:string;

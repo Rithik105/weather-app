@@ -18,7 +18,7 @@
                 <div class="fav-container-center-item3">{{i.current.condition.text}}</div>
                 
             </div>
-            <button class="fav-button" ></button>
+            <button *ngIf="i.isFav" class="fav-button" ></button>
         </div>
     
     </div>

@@ -1,6 +1,6 @@
 import { EventEmitter, Injectable } from "@angular/core";
 import { HttpService } from "./http.service";
-import { WeatherModel } from "./weather/weather.model";
+import { WeatherModel } from "./weather.model";
 
 @Injectable({
     providedIn:"root"
@@ -19,6 +19,7 @@ export class DataService{
    getCityData(city:string){
     this.httpService.FetchData(city).subscribe((data:WeatherModel)=>{
         this.weatherData = data
+        this.weatherData.isFav=false
         this.weatherDataChanged.emit(data)
         })
    }
@@ -58,14 +59,12 @@ export class DataService{
    }
 
    addToRecentList(city:string){
- this.recentCityList.add(city)
- console.log(this.recentCityList);
- 
+    this.recentCityList.add(city)
+    console.log(this.recentCityList);
    }
 
    getRecentList(){
     console.log(this.recentCityList);
-    
     this.recentWeatherList=[]
     if(this.recentCityList.size==0){
         this.recentUpdated.emit(this.recentWeatherList)
@@ -73,9 +72,9 @@ export class DataService{
     else{
     this.recentCityList.forEach((value) =>{
         this.httpService.FetchData(value).subscribe((data:WeatherModel)=>{
+            data.isFav=this.checkFav(data.location.name)
             this.recentWeatherList.push(data)
-           
-                this.recentUpdated.emit(this.recentWeatherList)  
+           this.recentUpdated.emit(this.recentWeatherList)  
             
         })
     });}

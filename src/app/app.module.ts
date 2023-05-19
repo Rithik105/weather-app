@@ -8,18 +8,22 @@ import { RecentComponent } from './recent/recent.component';
 import { DataService } from './data.service';
 import {  HttpClientModule } from '@angular/common/http';
 import { FormsModule } from '@angular/forms';
+import { HeaderComponent } from './header/header.component';
+import { AppRoutingModule } from './app.routes';
 
 @NgModule({
   declarations: [
     AppComponent,
     WheatherComponent,
     FavouriteComponent,
-    RecentComponent
+    RecentComponent,
+    HeaderComponent
   ],
   imports: [
     BrowserModule,
     HttpClientModule,
-    FormsModule
+    FormsModule,
+    AppRoutingModule
   ],
   providers: [DataService],
   bootstrap: [AppComponent]

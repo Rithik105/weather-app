@@ -1,10 +1,11 @@
 .body{
+    position: relative;
+    margin-top: 152px;
     display: flex;
     flex-direction: column;
-    margin-top: 10px;
-    margin-bottom: 10px;
-    height:100%;
-    width:100%
+    margin-left:7%;
+    margin-right:7.5%;
+    height:409px;
 }
 .top-container{
     text-align:left;
@@ -16,16 +17,12 @@
     width: 100%;
     align-items: start;
     justify-content: space-between;
-}
-.top-container-item{
-    height: 24px;
     color: #FFFFFF;
     font-family: Roboto;
     font-size: 20px;
     font-weight: 500;
     letter-spacing: 0;
     line-height: 24px;
-    text-align: left;
 }
 .top-container-fav-item{
     display: flex;
@@ -37,7 +34,7 @@
     width: 18px;
     background-color: transparent;
     border: 0px solid black;
-background-image: url("../assets/icon_favourite_Active.png") ;
+background-image: url("src/assets/images/icon_favourite_Active.png") ;
 background-position: center;
 background-repeat: no-repeat;
 background-size: contain;  
@@ -46,7 +43,7 @@ background-size: contain;
     height: 16.97px;
     width: 18px;
     border: 0px solid black;
-background-image: url("../assets/png-transparent-heart-symbol-computer-icons-heart-love-text-heart-thumbnail.png") ;
+background-image: url("src/assets/images/png-transparent-heart-symbol-computer-icons-heart-love-text-heart-thumbnail.png") ;
 background-position: center;
 background-repeat: no-repeat;
 background-size: contain;  
@@ -181,3 +178,13 @@ background-size: contain;
     line-height: 25px;
 }
 
+@media screen and (max-width:900px) {
+    .body{
+        margin-top: 0px;
+        align-items: center;
+    }
+    .top-container{
+        align-items: center;
+        text-align: center;
+    }
+}
