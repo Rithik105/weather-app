@@ -7,6 +7,7 @@ import { NgModule } from "@angular/core";
 const appRoutes:Routes=[
     {path:"favourite",component:FavouriteComponent},
     {path:"recents",component:RecentComponent},
+    {path:"home",component:WheatherComponent},
     {path:"",component:WheatherComponent}
 ]
 @NgModule({

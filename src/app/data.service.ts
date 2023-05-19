@@ -25,7 +25,13 @@ export class DataService{
    }
 
    getStoredData(){
-    return this.weatherData
+    if(this.weatherData){
+        return this.weatherData
+    }
+    else{
+        return {isFav:false,location:{name:"",region:"",localtime:""},current:{temp_c:0,temp_f:0,condition:{text:"",icon:""},wind_mph:0,humidity:0,vis_miles:0,precip_in:0}}
+    }
+    
    }
     
    addFav(city:string){

@@ -1,6 +1,7 @@
 import { DatePipe } from '@angular/common';
 import { Component, OnInit } from '@angular/core';
 import { DataService } from '../data.service';
+import { ActivatedRoute, Router } from '@angular/router';
 
 @Component({
   selector: 'app-header',
@@ -13,7 +14,7 @@ export class HeaderComponent implements OnInit{
   cityName=""
   date:string|null=""
    datepipe:DatePipe = new DatePipe('en-US')
-  constructor(private dataService:DataService){}
+  constructor(private dataService:DataService,private router:Router,private currentRoute:ActivatedRoute){}
 
   ngOnInit(): void {
     this.dataService.getCityData("udupi")
@@ -47,7 +48,20 @@ export class HeaderComponent implements OnInit{
     this.cityName=event.target.value
   }
 
- changeTab(tab:string){
-  this.tab=tab;
+ changeTab(tab:string,mobile:boolean){
+  if(mobile){
+    this.router.navigate([tab],{
+      relativeTo:this.currentRoute
+    })
+    this.tab=tab;
+    const burgermenu = document.getElementById("menu-container-mobile")?.style.setProperty('margin','0px -1000px')
+  }
+  else{
+    this.router.navigate([tab],{
+      relativeTo:this.currentRoute
+    })
+    this.tab=tab;
+  }
+ 
  }
 }

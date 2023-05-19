@@ -1,6 +1,5 @@
 .body{
-    position: relative;
-    margin-top: 152px;
+    margin-top: 0px;
     display: flex;
     flex-direction: column;
     margin-left:7%;
@@ -15,7 +14,7 @@
     margin-top: 37px;
     height: 61px;
     width: 100%;
-    align-items: start;
+    align-items: flex-start;
     justify-content: space-between;
     color: #FFFFFF;
     font-family: Roboto;
@@ -27,7 +26,6 @@
 .top-container-fav-item{
     display: flex;
     flex-direction: row;
- 
 }
 .fav-icon{
     height: 16.97px;
@@ -96,7 +94,6 @@ background-size: contain;
     flex-direction: row;
     align-items: center;
 }
-
 .temperature-button-item{
     border-top-right-radius: 2px;
     border-bottom-right-radius: 2px;
@@ -111,7 +108,6 @@ background-size: contain;
    letter-spacing: 0;
    line-height: 19px
 }
-
 .temperature-button-item-extra{
     border-top-left-radius: 2px;
     border-bottom-left-radius: 2px;
@@ -177,9 +173,9 @@ background-size: contain;
     letter-spacing: 0;
     line-height: 25px;
 }
-
 @media screen and (max-width:900px) {
     .body{
+        position: fixe;
         margin-top: 0px;
         align-items: center;
     }

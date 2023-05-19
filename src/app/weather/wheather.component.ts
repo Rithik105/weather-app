@@ -19,8 +19,7 @@ this.selectedTemperatureNotation=temp;
 }
 
 ngOnInit(): void {
-  console.log("init");
-  
+  this.weatherDetails=this.dataService.getStoredData()
   this.selectedTemperatureNotation='c' 
   this.dataService.weatherDataChanged.subscribe((value)=>{
     this.weatherDetails=value

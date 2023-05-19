@@ -1,7 +1,7 @@
 
 <div class="header">
     <div class="appbar">
-      <img id="burger-menu-mobile" (click)="burgerMenuPressed(false)" src="assets/images/icon_menu_white.png" alt="search">
+      <img id="burger-menu-icon-mobile"  (click)="burgerMenuPressed(false)" src="assets/images/icon_menu_white.png" alt="burger">
       <img src="assets/images/logo_web.png" alt="logo">
       <div class="search-container">
         <input type="text" placeholder="Search city" (input)="textInput($event)">
@@ -15,9 +15,9 @@
 
     <div class="navbar">
       
-        <button class="navbar-button" [ngClass]="{'title-selected':tab=='home'}" (click)="changeTab('home')">HOME</button>
-        <button class="navbar-button" [ngClass]="{'title-selected':tab=='favourite'}"  (click)="changeTab('favourite')">FAVOURITE</button>
-        <button class="navbar-button" [ngClass]="{'title-selected':tab=='recent'}"  (click)="changeTab('recent')">RECENT SEARCH</button>
+        <button class="navbar-button" [ngClass]="{'title-selected':tab=='home'}" (click)="changeTab('home',false)">HOME</button>
+        <button class="navbar-button" [ngClass]="{'title-selected':tab=='favourite'}"  (click)="changeTab('favourite',false)">FAVOURITE</button>
+        <button class="navbar-button" [ngClass]="{'title-selected':tab=='recents'}"  (click)="changeTab('recents',false)">RECENT SEARCH</button>
    
       <div class="title-bar-date">
         {{date}}
@@ -34,9 +34,9 @@
  <div id="menu-container-mobile">
  <div id="menu-mobile">
   <ul>
-    <li>Home</li>
-    <li>Favourites</li>
-    <li>Recent</li>
+    <li><div [ngClass]="{'title-selected':tab=='home'}" (click)="changeTab('home',true)">Home</div></li>
+    <li><div [ngClass]="{'title-selected':tab=='favourite'}" (click)="changeTab('favourite',true)">Favourites</div></li>
+    <li><div [ngClass]="{'title-selected':tab=='recents'}" (click)="changeTab('recents',true)">Recent</div></li>
   </ul>
  </div>
  <div (click)="burgerMenuPressed(true)" class="transparent-button">
