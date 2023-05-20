@@ -101,10 +101,8 @@ border: 0px solid black;
 }
 
 .title-bar-date{
-  top: 130px;
-    right: 8vw;
-    position: fixed ;
-    display: block;
+    text-align: right;
+    flex-grow: 1;
     font-family: Roboto;
     font-size: 14px;
     font-weight: 500;
@@ -180,7 +178,7 @@ border: 0px solid black;
     .header{
       height: 100px;
         padding: 16px 7% 0px 7%;
-        
+        background-color: #8b8b8b;
     }
     .navbar{
         display: none;
@@ -189,6 +187,7 @@ border: 0px solid black;
         display: none;
     }
     .title-date-mobile{
+        background-color: #8b8b8b;
         margin: 54px auto;
      letter-spacing: 1.5px;
     display: block;
