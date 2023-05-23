@@ -1,11 +1,10 @@
 .body{
-    background-color: #FAD05B;
     display: flex;
-    justify-content: space-between;
+    justify-content: space-around;
     flex-direction: column;
     margin-left:7%;
     margin-right:7.5%;
-    height:fit-content;
+    height:85vh;
 }
 .top-container{
     text-align:left;
@@ -130,8 +129,10 @@ background-size: contain;
     color: red;
 }
 .bottom-sheet{
-    margin-top: 35px;
+    margin-top: 2px;
     display: flex;
+    
+    padding: 0px 5%;
     justify-content: space-around;
     text-align: center;
     box-sizing: border-box;
@@ -183,7 +184,7 @@ background-size: contain;
         text-align: center;
     }
     .bottom-sheet{
-        margin-top: 0px;
+        margin: 0;
         white-space: nowrap;
         background-color: rgba(25,25,25,0.2);
         display: inline block;
@@ -194,4 +195,14 @@ background-size: contain;
         margin: 20px;
 
     }
+}
+@media screen and (max-height:800px){
+
+    .body{
+        height: 100%;
+    }
+    .bottom-sheet{
+        margin-top: 50px;
+     }
+    
 }

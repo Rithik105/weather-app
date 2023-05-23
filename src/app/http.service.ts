@@ -1,7 +1,7 @@
 import {HttpClient} from "@angular/common/http"
 import { Injectable } from "@angular/core";
 import { map } from "rxjs/operators";
-import { WeatherModel } from "./weather.model";
+import { LocationModel, WeatherModel } from "./weather.model";
 
 
 @Injectable({
@@ -10,9 +10,13 @@ import { WeatherModel } from "./weather.model";
 export class HttpService{
  constructor(private http:HttpClient) {}
  
- FetchData(city:string){
+ FetchWeatherData(city:string){
     return this.http.get<WeatherModel>(`https://api.weatherapi.com/v1/current.json?key=ccec4479ced04aeca23153343230405&q=${city}&aqi=no`,
     )
+ }
+
+ FetchCityName(value:string){
+    return this.http.get<LocationModel[]>(`https://api.weatherapi.com/v1/search.json?key=ccec4479ced04aeca23153343230405&q=${value}`)
  }
 
 

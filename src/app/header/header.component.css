@@ -178,7 +178,6 @@ border: 0px solid black;
     .header{
       height: 100px;
         padding: 16px 7% 0px 7%;
-        background-color: #8b8b8b;
     }
     .navbar{
         display: none;
@@ -187,7 +186,6 @@ border: 0px solid black;
         display: none;
     }
     .title-date-mobile{
-        background-color: #8b8b8b;
         margin: 54px auto;
      letter-spacing: 1.5px;
     display: block;
@@ -199,8 +197,15 @@ border: 0px solid black;
     .title-selected{
         border: 0px;
         font-weight: bold;
-        color: #8b8b8b;
+        color: #615b5b;
     
     }
 
+}
+@media screen and (max-height:688px){
+
+    .container{
+        height: fit-content;
+    }
+    
 }

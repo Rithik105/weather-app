@@ -10,6 +10,9 @@ import {  HttpClientModule } from '@angular/common/http';
 import { FormsModule } from '@angular/forms';
 import { HeaderComponent } from './header/header.component';
 import { AppRoutingModule } from './app.routes';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import {MatInputModule} from '@angular/material/input';
+import {MatAutocompleteModule} from '@angular/material/autocomplete'
 
 @NgModule({
   declarations: [
@@ -23,7 +26,10 @@ import { AppRoutingModule } from './app.routes';
     BrowserModule,
     HttpClientModule,
     FormsModule,
-    AppRoutingModule
+    AppRoutingModule,
+    BrowserAnimationsModule,
+    MatInputModule,
+    MatAutocompleteModule
   ],
   providers: [DataService],
   bootstrap: [AppComponent]

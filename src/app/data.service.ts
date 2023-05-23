@@ -1,11 +1,14 @@
 import { EventEmitter, Injectable } from "@angular/core";
 import { HttpService } from "./http.service";
-import { WeatherModel } from "./weather.model";
+import { LocationModel, WeatherModel } from "./weather.model";
+import { Subject } from "rxjs";
 
 @Injectable({
     providedIn:"root"
 })
 export class DataService{
+    cityNames:LocationModel[] = []
+    cityNamesUpdated = new Subject<LocationModel[]>()
     favCityList:string[] = []
     recentCityList=new Set<string>()
      favWeatherList : WeatherModel[]=[]
@@ -17,7 +20,7 @@ export class DataService{
    constructor(private httpService:HttpService){}
 
    getCityData(city:string){
-    this.httpService.FetchData(city).subscribe((data:WeatherModel)=>{
+    this.httpService.FetchWeatherData(city).subscribe((data:WeatherModel)=>{
         this.weatherData = data
         this.weatherData.isFav=false
         this.weatherDataChanged.emit(data)
@@ -32,6 +35,15 @@ export class DataService{
         return {isFav:false,location:{name:"",region:"",localtime:""},current:{temp_c:0,temp_f:0,condition:{text:"",icon:""},wind_mph:0,humidity:0,vis_miles:0,precip_in:0}}
     }
     
+   }
+
+   getCityName(value:string){
+    this.httpService.FetchCityName(value).subscribe((data:LocationModel[])=>{
+        this.cityNames=data
+        console.log(this.cityNames);
+        
+        this.cityNamesUpdated.next(this.cityNames)
+    })
    }
     
    addFav(city:string){
@@ -55,7 +67,7 @@ export class DataService{
     }
     else{
     this.favCityList.forEach((value, index) => {
-        this.httpService.FetchData(value).subscribe((data:WeatherModel)=>{
+        this.httpService.FetchWeatherData(value).subscribe((data:WeatherModel)=>{
             this.favWeatherList.push(data)
             if(index==this.favCityList.length-1){
                 this.favUpdated.emit(this.favWeatherList)  
@@ -77,7 +89,7 @@ export class DataService{
     }
     else{
     this.recentCityList.forEach((value) =>{
-        this.httpService.FetchData(value).subscribe((data:WeatherModel)=>{
+        this.httpService.FetchWeatherData(value).subscribe((data:WeatherModel)=>{
             data.isFav=this.checkFav(data.location.name)
             this.recentWeatherList.push(data)
            this.recentUpdated.emit(this.recentWeatherList)  

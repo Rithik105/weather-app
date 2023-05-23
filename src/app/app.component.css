@@ -2,17 +2,22 @@
     display: flex;
     flex-direction: column;
     background-image: url("src/assets/images/background.png");
-    background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
-    height: fit-content;
+    height: 100%;
     width: 100%;
 }
-@media screen and (max-width:900px) {
+@media screen and (max-height:688px){
+    
+    .container{
+        height: fit-content;
+    }
+    
+}
+@media screen and (max-width:680px) {
  
     .container{
         height: 100%;
-        justify-content: space-between;
     }
 
 }

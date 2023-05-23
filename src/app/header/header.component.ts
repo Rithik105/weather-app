@@ -2,6 +2,7 @@ import { DatePipe } from '@angular/common';
 import { Component, OnInit } from '@angular/core';
 import { DataService } from '../data.service';
 import { ActivatedRoute, Router } from '@angular/router';
+import { LocationModel } from '../weather.model';
 
 @Component({
   selector: 'app-header',
@@ -9,6 +10,7 @@ import { ActivatedRoute, Router } from '@angular/router';
   styleUrls: ['./header.component.css']
 })
 export class HeaderComponent implements OnInit{
+  cityNames:LocationModel[]=[]
   weatherDetails:any
   tab="home"
   cityName=""
@@ -22,6 +24,13 @@ export class HeaderComponent implements OnInit{
       (data)=>{
       this.date=this.datepipe.transform(data.location.localtime,"EEE, dd MMM YYYY  h:mm a ")
   }
+ 
+  )
+  this.dataService.cityNamesUpdated.subscribe(
+    (data)=>{
+      this.cityNames=data
+      
+    }
   )
   }
 
@@ -46,6 +55,9 @@ export class HeaderComponent implements OnInit{
 
   textInput(event:any){
     this.cityName=event.target.value
+    if(this.cityName!=""){
+    this.dataService.getCityName(this.cityName)
+    }
   }
 
  changeTab(tab:string,mobile:boolean){
