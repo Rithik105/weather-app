@@ -1,4 +1,5 @@
 .container{
+
     display: flex;
     flex-direction: column;
     background-image: url("src/assets/images/background.png");
@@ -6,7 +7,9 @@
     background-size: cover;
     height: 100%;
     width: 100%;
+    
 }
+
 @media screen and (max-height:688px){
     
     .container{
@@ -14,6 +17,7 @@
     }
     
 }
+
 @media screen and (max-width:680px) {
  
     .container{

@@ -44,6 +44,8 @@ export class HeaderComponent implements OnInit{
   }
 
   searchButton(){
+    console.log("search");
+    
     this.dataService.addToRecentList(this.cityName)
   this.dataService.getCityData(this.cityName)
   this.dataService.weatherDataChanged.subscribe((data)=>{

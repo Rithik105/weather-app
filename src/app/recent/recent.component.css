@@ -1,7 +1,6 @@
 .container{
-  
+  padding: 43px 7% 0px 7%;
     height: 600px;
-    width: 100%;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -68,9 +67,11 @@
   font-weight: 500;
   letter-spacing: 0;
   line-height: 19px;
+  background-color: aqua;
   }
 
   .fav-container-center-item{
+    background-color: beige;
     display:flex;
     flex-direction: row;
     align-items: center;

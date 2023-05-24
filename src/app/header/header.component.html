@@ -5,9 +5,9 @@
       <img src="assets/images/logo_web.png" alt="logo">
       <div class="search-container">
         <input type="text" placeholder="Search city" aria-label="Number" matInput (input)="textInput($event)" [matAutocomplete] = "auto">
-        <mat-autocomplete #auto="matAutocomplete">
-          <mat-option *ngFor = "let state of cityNames" [value]="state.name">
-             {{state.name}}
+        <mat-autocomplete #auto="matAutocomplete" (optionSelected)="searchButton()">
+          <mat-option *ngFor = "let state of cityNames" [value]="state.name" >
+             <div (click)="searchButton()"> {{state.name}}</div>
           </mat-option>
         </mat-autocomplete>
         <img (click)="searchButton()" src="assets/images/icon_search_white.png" alt="search">

@@ -13,6 +13,7 @@ import { AppRoutingModule } from './app.routes';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import {MatInputModule} from '@angular/material/input';
 import {MatAutocompleteModule} from '@angular/material/autocomplete'
+import {MatDialogModule} from '@angular/material/dialog'
 
 @NgModule({
   declarations: [
@@ -29,7 +30,8 @@ import {MatAutocompleteModule} from '@angular/material/autocomplete'
     AppRoutingModule,
     BrowserAnimationsModule,
     MatInputModule,
-    MatAutocompleteModule
+    MatAutocompleteModule,
+    MatDialogModule
   ],
   providers: [DataService],
   bootstrap: [AppComponent]
